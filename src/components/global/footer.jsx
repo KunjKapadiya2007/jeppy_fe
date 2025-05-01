@@ -1,0 +1,291 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import {
+    Box,
+    Container,
+    Typography,
+    Grid,
+    TextField,
+    InputAdornment,
+    IconButton,
+    Link as MuiLink,
+    useMediaQuery,
+    useTheme,
+} from '@mui/material';
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import Logo from '../../assets/images/global/logo.jpg';
+
+const Footer = () => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const isTablet = useMediaQuery(theme.breakpoints.down('md'));
+
+    return (
+        <Box sx={{ backgroundColor: '#f78c1f', color: 'white', pt: { xs: 4, sm: 5, md: 6 }, pb: 2 }}>
+            <Container maxWidth="xl">
+                {/* Logo */}
+                <Box sx={{ mb: { xs: 3, md: 5 }, display: 'flex', justifyContent: { xs: 'center', sm: 'flex-start' } }}>
+                    <Box component="img" src={Logo} alt="Logo" sx={{ height: { xs: 30, sm: 40 } }} />
+                </Box>
+
+                <Grid container spacing={{ xs: 4, sm: 6, md: 10 }} justifyContent={'center'}>
+                    {/* Left Column - Social + Newsletter + Bottom Links */}
+                    <Grid item xs={12} md={6}>
+                        {/* Social Links */}
+                        <Box sx={{
+                            display: 'flex',
+                            gap: 2,
+                            mb: 3,
+                            justifyContent: { xs: 'center', sm: 'flex-start' }
+                        }}>
+                            {['Facebook', 'Instagram', 'LinkedIn', 'Pinterest'].map((platform) => (
+                                <Typography
+                                    key={platform}
+                                    variant="body2"
+                                    sx={{
+                                        cursor: 'pointer',
+                                        fontSize: { xs: '14px', sm: '16px' },
+                                        '&:hover': { textDecoration: 'underline' },
+                                    }}
+                                >
+                                    {platform}
+                                </Typography>
+                            ))}
+                        </Box>
+
+                        {/* Newsletter Section */}
+                        <Typography sx={{
+                            mb: 1,
+                            mt: { xs: 4, md: 6 },
+                            textAlign: { xs: 'center', sm: 'left' },
+                            fontSize: { xs: '16px', sm: '18px' }
+                        }}>
+                            Let's Connect with us for updates
+                        </Typography>
+                        <Box sx={{ display: 'flex', alignItems: 'center', mt: 2 }}>
+                            <TextField
+                                variant="standard"
+                                placeholder="Enter Your E-mail Address"
+                                InputProps={{
+                                    disableUnderline: false,
+                                    endAdornment: (
+                                        <InputAdornment position="end">
+                                            <IconButton sx={{ color: 'white', p: 0 }}>
+                                                <ArrowOutwardIcon />
+                                            </IconButton>
+                                        </InputAdornment>
+                                    ),
+                                }}
+                                fullWidth
+                                sx={{
+                                    input: {
+                                        color: 'white',
+                                        fontWeight: 'bold',
+                                        '::placeholder': {
+                                            color: 'white',
+                                            fontSize: { xs: '14px', sm: '16px' },
+                                            opacity: 1,
+                                            fontWeight: 'bold',
+                                        },
+                                    },
+                                    '& .MuiInputBase-root': {
+                                        pb: '4px',
+                                    },
+                                    '& .MuiInput-underline:before': {
+                                        borderBottomColor: 'rgba(255,255,255,0.5)',
+                                    },
+                                    '& .MuiInput-underline:hover:before': {
+                                        borderBottomColor: 'white',
+                                    },
+                                    '& .MuiInput-underline:after': {
+                                        borderBottomColor: 'white',
+                                    },
+                                }}
+                            />
+                        </Box>
+
+                        {/* Bottom Links - Only visible on larger screens */}
+                        <Box sx={{
+                            pt: { xs: 5, md: 9 },
+                            display: { xs: 'none', md: 'block' }
+                        }}>
+                            <Box sx={{
+                                display: 'flex',
+                                gap: 3,
+                                justifyContent: { xs: 'center', sm: 'flex-start' }
+                            }}>
+                                {['Cookies', 'Policy', 'Terms'].map((item) => (
+                                    <Box
+                                        key={item}
+                                        sx={{
+                                            fontSize: '16px',
+                                            fontWeight: 500,
+                                            cursor: 'pointer',
+                                            '&:hover': { textDecoration: 'underline' },
+                                        }}
+                                    >
+                                        {item}
+                                    </Box>
+                                ))}
+                            </Box>
+                        </Box>
+                    </Grid>
+
+                    {/* Right Column - Link Sections */}
+                    <Grid item xs={12} md={6}>
+                        <Grid container spacing={{ xs: 4, sm: 7 }}>
+                            {/* Quick Links */}
+                            <Grid item xs={6} sm={4}>
+                                <Typography
+                                    fontWeight="700"
+                                    mb={2}
+                                    textAlign={{ xs: 'center', sm: 'left' }}
+                                >
+                                    Quick links
+                                </Typography>
+                                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', sm: 'flex-start' } }}>
+                                    {['Our Products', 'Our Process', 'About Us', 'Contact'].map((text) => (
+                                        <Box
+                                            key={text}
+                                            component={Link}
+                                            to="/"
+                                            sx={{
+                                                display: 'block',
+                                                color: 'white',
+                                                fontWeight: '300',
+                                                lineHeight: { xs: '24px', sm: '29px' },
+                                                textDecoration: 'none',
+                                                mb: 1,
+                                                '&:hover': { textDecoration: 'underline' },
+                                            }}
+                                        >
+                                            {text}
+                                        </Box>
+                                    ))}
+                                </Box>
+                            </Grid>
+
+                            {/* Products */}
+                            <Grid item xs={6} sm={4}>
+                                <Typography
+                                    fontWeight="bold"
+                                    mb={2}
+                                    textAlign={{ xs: 'center', sm: 'left' }}
+                                >
+                                    Products
+                                </Typography>
+                                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', sm: 'flex-start' } }}>
+                                    {[
+                                        '2D Pallets',
+                                        '3D Pallets',
+                                        'Gluten Free Pallets',
+                                        'Micro Pallets',
+                                        'Potato Pallets',
+                                        'Sheeted Pallets',
+                                        'Veggi Pallets',
+                                    ].map((text) => (
+                                        <Box
+                                            key={text}
+                                            component={Link}
+                                            to="/products"
+                                            sx={{
+                                                display: 'block',
+                                                color: 'white',
+                                                fontWeight: '300',
+                                                lineHeight: { xs: '24px', sm: '29px' },
+                                                textDecoration: 'none',
+                                                mb: 1,
+                                                '&:hover': { textDecoration: 'underline' },
+                                            }}
+                                        >
+                                            {text}
+                                        </Box>
+                                    ))}
+                                </Box>
+                            </Grid>
+
+                            {/* Contact */}
+                            <Grid item xs={12} sm={4}>
+                                <Typography
+                                    fontWeight="bold"
+                                    mb={2}
+                                    textAlign={{ xs: 'center', sm: 'left' }}
+                                >
+                                    Contact
+                                </Typography>
+                                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', sm: 'flex-start' } }}>
+                                    {['Gratis Termin', 'Freunde einladen', 'Patienteninformationen'].map((text) => (
+                                        <Typography
+                                            key={text}
+                                            sx={{
+                                                mb: 1,
+                                                fontWeight: '300',
+                                                lineHeight: { xs: '24px', sm: '29px' },
+                                            }}
+                                        >
+                                            {text}
+                                        </Typography>
+                                    ))}
+                                </Box>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+                {/* Bottom Links - Only visible on smaller screens */}
+                <Box sx={{
+                    pt: 4,
+                    mb: 3,
+                    display: { xs: 'flex', md: 'none' },
+                    justifyContent: 'center',
+                    gap: 3
+                }}>
+                    {['Cookies', 'Policy', 'Terms'].map((item) => (
+                        <Box
+                            key={item}
+                            sx={{
+                                fontSize: { xs: '14px', sm: '16px' },
+                                fontWeight: 500,
+                                cursor: 'pointer',
+                                '&:hover': { textDecoration: 'underline' },
+                            }}
+                        >
+                            {item}
+                        </Box>
+                    ))}
+                </Box>
+
+                {/* Footer Bottom */}
+                <Box
+                    sx={{
+                        mt: { xs: 3, md: 6 },
+                        fontSize: { xs: '12px', sm: '14px' },
+                    }}
+                >
+                    <Box sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        textAlign: 'center',
+                        flexWrap: 'wrap',
+                        px: { xs: 2, sm: 0 }
+                    }}>
+                        © COPYRIGHT 2004 – 2025 JAYANT SNACKS AND BEVERAGES PVT. LTD. ALL RIGHTS RESERVED. POWERED BY{' '}
+                        <span style={{ marginRight: '4px' }}></span>
+                        <MuiLink
+                            href="https://websmaniac.com"
+                            target="_blank"
+                            rel="noopener"
+                            underline="hover"
+                            sx={{ color: 'white' }}
+                        >
+                            WEBSMANIAC INC.
+                        </MuiLink>
+                    </Box>
+                </Box>
+            </Container>
+        </Box>
+    );
+};
+
+export default Footer;
