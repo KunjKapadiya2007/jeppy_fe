@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography } from "@mui/material";
+import {Box, Typography, useTheme} from "@mui/material";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -17,24 +17,27 @@ import image7 from '../../assets/home/ourParteners/451daacf11cb5a93e1618319b1679
 const images = [image1, image2, image3, image4, image5, image6, image7];
 
 function OurPartners() {
+
+    const theme = useTheme();
+
     return (
         <Box>
             <Typography sx={{ fontSize: { md: "36px", sm: "28px", xs: "20px" }, fontWeight: 700, textAlign: "center", color: "#000" , pb:4 }}>
                 Our Success Partners
             </Typography>
 
-            <Box sx={{ mt: 4, px: 2 ,background: "#f57c00" , py:5}}>
+            <Box sx={{ mt: 4, px: 2 ,background: `${theme.palette.saffron}` , py:5}}>
                 <Swiper
                     modules={[Autoplay]}
                     spaceBetween={0}
                     slidesPerView={2}
                     loop={true}
-                    speed={5000} // smooth speed
+                    speed={4000}
                     autoplay={{
-                        delay: 0, // no delay = continuous
+                        delay: 0,
                         disableOnInteraction: false
                     }}
-                    allowTouchMove={false} // disables manual swipe to keep it always moving
+                    allowTouchMove={false}
                     breakpoints={{
                         640: { slidesPerView: 3 },
                         768: { slidesPerView: 5 },

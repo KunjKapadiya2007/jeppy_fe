@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {
     Box,
     Container,
@@ -21,22 +21,19 @@ const Footer = () => {
     const isTablet = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
-        <Box sx={{ backgroundColor: '#f78c1f', color: 'white', pt: { xs: 4, sm: 5, md: 6 }, pb: 2 }}>
+        <Box sx={{backgroundColor: '#f78c1f', color: 'white', pt: {xs: 4, sm: 5, md: 6}, pb: 2}}>
             <Container maxWidth="xl">
-                {/* Logo */}
-                <Box sx={{ mb: { xs: 3, md: 5 }, display: 'flex', justifyContent: { xs: 'center', sm: 'flex-start' } }}>
-                    <Box component="img" src={Logo} alt="Logo" sx={{ height: { xs: 30, sm: 40 } }} />
+                <Box sx={{mb: {xs: 3, md: 5}, display: 'flex', justifyContent: {xs: 'center', md: 'flex-start'}}}>
+                    <Box component="img" src={Logo} alt="Logo" sx={{height: {xs: 30, sm: 40}}}/>
                 </Box>
 
-                <Grid container spacing={{ xs: 4, sm: 6, md: 10 }} justifyContent={'center'}>
-                    {/* Left Column - Social + Newsletter + Bottom Links */}
-                    <Grid item xs={12} md={6}>
-                        {/* Social Links */}
+                <Grid container spacing={{xs: 4, sm: 6, md: 10}}>
+                    <Grid item size={{ md:5 , xs:12 }}>
                         <Box sx={{
                             display: 'flex',
                             gap: 2,
                             mb: 3,
-                            justifyContent: { xs: 'center', sm: 'flex-start' }
+                            justifyContent: {xs: 'center', md: 'flex-start'}
                         }}>
                             {['Facebook', 'Instagram', 'LinkedIn', 'Pinterest'].map((platform) => (
                                 <Typography
@@ -44,8 +41,8 @@ const Footer = () => {
                                     variant="body2"
                                     sx={{
                                         cursor: 'pointer',
-                                        fontSize: { xs: '14px', sm: '16px' },
-                                        '&:hover': { textDecoration: 'underline' },
+                                        fontSize: {xs: '14px', sm: '16px'},
+                                        '&:hover': {textDecoration: 'underline'},
                                     }}
                                 >
                                     {platform}
@@ -53,16 +50,15 @@ const Footer = () => {
                             ))}
                         </Box>
 
-                        {/* Newsletter Section */}
                         <Typography sx={{
                             mb: 1,
-                            mt: { xs: 4, md: 6 },
-                            textAlign: { xs: 'center', sm: 'left' },
-                            fontSize: { xs: '16px', sm: '18px' }
+                            mt: {xs: 4, md: 6},
+                            textAlign: {xs: 'center', md: 'left'},
+                            fontSize: {xs: '16px', sm: '18px'}
                         }}>
                             Let's Connect with us for updates
                         </Typography>
-                        <Box sx={{ display: 'flex', alignItems: 'center', mt: 2 }}>
+                        <Box sx={{display: 'flex', alignItems: 'center' , justifyContent: {xs:"center" , md:"unset"}, mt: 3}}>
                             <TextField
                                 variant="standard"
                                 placeholder="Enter Your E-mail Address"
@@ -70,20 +66,19 @@ const Footer = () => {
                                     disableUnderline: false,
                                     endAdornment: (
                                         <InputAdornment position="end">
-                                            <IconButton sx={{ color: 'white', p: 0 }}>
-                                                <ArrowOutwardIcon />
+                                            <IconButton sx={{color: 'white', p: 0}}>
+                                                <ArrowOutwardIcon/>
                                             </IconButton>
                                         </InputAdornment>
                                     ),
                                 }}
-                                fullWidth
                                 sx={{
                                     input: {
                                         color: 'white',
                                         fontWeight: 'bold',
                                         '::placeholder': {
                                             color: 'white',
-                                            fontSize: { xs: '14px', sm: '16px' },
+                                            fontSize: {xs: '14px', sm: '16px'},
                                             opacity: 1,
                                             fontWeight: 'bold',
                                         },
@@ -104,15 +99,14 @@ const Footer = () => {
                             />
                         </Box>
 
-                        {/* Bottom Links - Only visible on larger screens */}
                         <Box sx={{
-                            pt: { xs: 5, md: 9 },
-                            display: { xs: 'none', md: 'block' }
+                            pt: {xs: 5, md: 9},
+                            display: {xs: 'none', md: 'block'}
                         }}>
                             <Box sx={{
                                 display: 'flex',
                                 gap: 3,
-                                justifyContent: { xs: 'center', sm: 'flex-start' }
+                                justifyContent: {xs: 'center', md: 'flex-start'}
                             }}>
                                 {['Cookies', 'Policy', 'Terms'].map((item) => (
                                     <Box
@@ -121,7 +115,7 @@ const Footer = () => {
                                             fontSize: '16px',
                                             fontWeight: 500,
                                             cursor: 'pointer',
-                                            '&:hover': { textDecoration: 'underline' },
+                                            '&:hover': {textDecoration: 'underline'},
                                         }}
                                     >
                                         {item}
@@ -131,19 +125,21 @@ const Footer = () => {
                         </Box>
                     </Grid>
 
-                    {/* Right Column - Link Sections */}
-                    <Grid item xs={12} md={6}>
-                        <Grid container spacing={{ xs: 4, sm: 7 }}>
-                            {/* Quick Links */}
-                            <Grid item xs={6} sm={4}>
+                    <Grid item size={{ md:6 , xs:12 }}>
+                        <Grid container spacing={{xs: 4, sm: 7}}>
+                            <Grid item size={{ sm:4 , xs:6 }}>
                                 <Typography
                                     fontWeight="700"
                                     mb={2}
-                                    textAlign={{ xs: 'center', sm: 'left' }}
+                                    textAlign={{xs: 'center', md: 'left'}}
                                 >
                                     Quick links
                                 </Typography>
-                                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', sm: 'flex-start' } }}>
+                                <Box sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: {xs: 'center', md: 'flex-start'}
+                                }}>
                                     {['Our Products', 'Our Process', 'About Us', 'Contact'].map((text) => (
                                         <Box
                                             key={text}
@@ -153,10 +149,10 @@ const Footer = () => {
                                                 display: 'block',
                                                 color: 'white',
                                                 fontWeight: '300',
-                                                lineHeight: { xs: '24px', sm: '29px' },
+                                                lineHeight: {xs: '24px', sm: '29px'},
                                                 textDecoration: 'none',
                                                 mb: 1,
-                                                '&:hover': { textDecoration: 'underline' },
+                                                '&:hover': {textDecoration: 'underline'},
                                             }}
                                         >
                                             {text}
@@ -165,16 +161,19 @@ const Footer = () => {
                                 </Box>
                             </Grid>
 
-                            {/* Products */}
-                            <Grid item xs={6} sm={4}>
+                            <Grid item size={{ sm:4 , xs:6 }}>
                                 <Typography
                                     fontWeight="bold"
                                     mb={2}
-                                    textAlign={{ xs: 'center', sm: 'left' }}
+                                    textAlign={{xs: 'center', md: 'left'}}
                                 >
                                     Products
                                 </Typography>
-                                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', sm: 'flex-start' } }}>
+                                <Box sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: {xs: 'center', md: 'flex-start'}
+                                }}>
                                     {[
                                         '2D Pallets',
                                         '3D Pallets',
@@ -192,10 +191,10 @@ const Footer = () => {
                                                 display: 'block',
                                                 color: 'white',
                                                 fontWeight: '300',
-                                                lineHeight: { xs: '24px', sm: '29px' },
+                                                lineHeight: {xs: '24px', sm: '29px'},
                                                 textDecoration: 'none',
                                                 mb: 1,
-                                                '&:hover': { textDecoration: 'underline' },
+                                                '&:hover': {textDecoration: 'underline'},
                                             }}
                                         >
                                             {text}
@@ -204,23 +203,26 @@ const Footer = () => {
                                 </Box>
                             </Grid>
 
-                            {/* Contact */}
-                            <Grid item xs={12} sm={4}>
+                            <Grid item size={{ sm:4 , xs:12 }}>
                                 <Typography
                                     fontWeight="bold"
                                     mb={2}
-                                    textAlign={{ xs: 'center', sm: 'left' }}
+                                    textAlign={{xs: 'center', md: 'left'}}
                                 >
                                     Contact
                                 </Typography>
-                                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', sm: 'flex-start' } }}>
+                                <Box sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: {xs: 'center', md: 'flex-start'}
+                                }}>
                                     {['Gratis Termin', 'Freunde einladen', 'Patienteninformationen'].map((text) => (
                                         <Typography
                                             key={text}
                                             sx={{
                                                 mb: 1,
                                                 fontWeight: '300',
-                                                lineHeight: { xs: '24px', sm: '29px' },
+                                                lineHeight: {xs: '24px', sm: '29px'},
                                             }}
                                         >
                                             {text}
@@ -232,11 +234,10 @@ const Footer = () => {
                     </Grid>
                 </Grid>
 
-                {/* Bottom Links - Only visible on smaller screens */}
                 <Box sx={{
                     pt: 4,
                     mb: 3,
-                    display: { xs: 'flex', md: 'none' },
+                    display: {xs: 'flex', md: 'none'},
                     justifyContent: 'center',
                     gap: 3
                 }}>
@@ -244,10 +245,10 @@ const Footer = () => {
                         <Box
                             key={item}
                             sx={{
-                                fontSize: { xs: '14px', sm: '16px' },
+                                fontSize: {xs: '14px', sm: '16px'},
                                 fontWeight: 500,
                                 cursor: 'pointer',
-                                '&:hover': { textDecoration: 'underline' },
+                                '&:hover': {textDecoration: 'underline'},
                             }}
                         >
                             {item}
@@ -255,11 +256,10 @@ const Footer = () => {
                     ))}
                 </Box>
 
-                {/* Footer Bottom */}
                 <Box
                     sx={{
-                        mt: { xs: 3, md: 6 },
-                        fontSize: { xs: '12px', sm: '14px' },
+                        mt: {xs: 3, md: 6},
+                        fontSize: {xs: '12px', sm: '14px'},
                     }}
                 >
                     <Box sx={{
@@ -268,16 +268,17 @@ const Footer = () => {
                         justifyContent: 'center',
                         textAlign: 'center',
                         flexWrap: 'wrap',
-                        px: { xs: 2, sm: 0 }
+                        px: {xs: 2, sm: 0}
                     }}>
-                        © COPYRIGHT 2004 – 2025 JAYANT SNACKS AND BEVERAGES PVT. LTD. ALL RIGHTS RESERVED. POWERED BY{' '}
-                        <span style={{ marginRight: '4px' }}></span>
+                        © COPYRIGHT 2004 – 2025 JAYANT SNACKS AND BEVERAGES PVT. LTD. ALL RIGHTS RESERVED. POWERED
+                        BY{' '}
+                        <span style={{marginRight: '4px'}}></span>
                         <MuiLink
                             href="https://websmaniac.com"
                             target="_blank"
                             rel="noopener"
                             underline="hover"
-                            sx={{ color: 'white' }}
+                            sx={{color: 'white'}}
                         >
                             WEBSMANIAC INC.
                         </MuiLink>
