@@ -29,7 +29,7 @@ function AboutUs() {
                 <Box sx={{
                     display: "flex",
                     flexDirection: { xs: "column", md: "row" },
-                    alignItems: { xs: "center", md: "flex-start" },
+                    alignItems: "center",
                     gap: { xs: 4, md: 6 },
                     ml: { xs: 0, md: 6 },
                 }}>
@@ -56,7 +56,7 @@ function AboutUs() {
                         <Typography
                             variant="body1"
                             sx={{
-                                fontSize: { xs: "16px", sm: "18px", md: "24px" },
+                                fontSize: { xs: "16px", sm: "18px", md: "20px" , lg: "24px" },
                                 fontWeight: 500,
                                 lineHeight: { xs: "28px", md: "34px" },
                                 mb: 4,
