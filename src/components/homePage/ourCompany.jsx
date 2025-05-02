@@ -21,26 +21,33 @@ function OurCompany() {
         display: "flex",
         justifyContent: 'center'
     }}>
-        <Box
-            component="img"
-            src={Img1}
-            alt="img1"
-            sx={{
-                width: "50%",
-                height: "auto",
-                objectFit: "contain"
-            }}
-        />
-        <Box
-            component="img"
-            src={Img2}
-            alt="img2"
-            sx={{
-                width: "50%",
-                height: "auto",
-                objectFit: "contain"
-            }}
-        />
+        <Box sx={{
+            display:"flex",
+            justifyContent: 'start',
+        }}>
+            <Box
+                component="img"
+                src={Img1}
+                alt="img1"
+                sx={{
+                    width: "60%",
+                    height: "auto",
+                    objectFit: "contain"
+                }}
+            />
+        </Box>
+        <Box>
+            <Box
+                component="img"
+                src={Img2}
+                alt="img2"
+                sx={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "contain"
+                }}
+            />
+        </Box>
     </Box>
 </Container>
         </Box>
