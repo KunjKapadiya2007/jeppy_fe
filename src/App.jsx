@@ -2,18 +2,18 @@ import './App.css'
 import Navbar from "./components/global/navbar.jsx";
 import {Routes , Route} from "react-router-dom";
 import Home from "./pages/home.jsx";
+import Ourprocess from "./pages/ourprocess.jsx";
+import About from "./pages/about.jsx";
 
 function App() {
 
   return (
     <>
 <Navbar />
-        <Home/>
         <Routes>
-            {/*<Route path="/products" element={<Products/>}/>*/}
+            <Route path="/" element={<Home />} />
             <Route path="/process" element={<Ourprocess/>}/>
-            {/*<Route path="/about" element={<About/>}/>*/}
-            {/*<Route path="/contact" element={<Contact/>}/>*/}
+            <Route path="/about" element={<About/>}/>
         </Routes>
         {/*<Footer />*/}
     </>
