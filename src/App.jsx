@@ -1,18 +1,13 @@
 import './App.css'
 import Navbar from "./components/global/navbar.jsx";
-import Footer from "./components/global/footer.jsx";
-import Productss from "./pages/homepage/productss.jsx";
-import About from "./pages/homepage/about.jsx";
-import Milestonee from "./pages/homepage/milestonee.jsx";
+import Home from "./pages/home.jsx";
 
 function App() {
 
   return (
     <>
 <Navbar />
-        <Productss/>
-        <About/>
-        <Milestonee/>
+        <Home/>
         {/*<Router>*/}
         {/*    <Routes>*/}
         {/*        <Route path="/products" element={<Products />} />*/}
