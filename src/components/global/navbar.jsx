@@ -11,7 +11,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/images/global/logo.jpg'; // Update path as needed
+import Logo from '../../assets/images/global/logo.jpg';
 
 const navItems = [
     { label: 'Our Products', path: '/products' },
@@ -26,12 +26,17 @@ function Navbar() {
     const toggleMenu = () => setMenuOpen((prev) => !prev);
 
     return (
-        <Box sx={{ background: '#000' }}>
+        <Box sx={{
+            position:"absolute",
+            width:'100%',
+            px: {xs:3 , md:5},
+            zIndex: 999,
+        }}>
             <Container
-                maxWidth="xl"
+                maxWidth="xxl"
                 sx={{
                     backgroundColor: '#fff',
-                    borderRadius: {md:'50px',xs:'20px'},
+                    borderRadius: {md:'50px',xs:'50px'},
                     display: 'flex',
                     flexDirection: 'column',
                     px: 3,
@@ -45,10 +50,11 @@ function Navbar() {
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     width: '100%',
+                    padding:"0px 41px"
                 }}>
                     {/* Logo */}
                     <Box component={Link} to="/" sx={{ display: 'flex', alignItems: 'center' }}>
-                        <Box component="img" src={Logo} alt="Logo" sx={{ height: 40 }} />
+                        <Box component="img" src={Logo} alt="Logo" sx={{ height: {md:"100%" , xs:"40px"} }} />
                     </Box>
 
                     {/* Desktop Navigation */}

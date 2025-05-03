@@ -7,6 +7,7 @@ import About from "./pages/about.jsx";
 import OurProducts from "./pages/ourProducts.jsx";
 import ProductDetails from "./pages/productDetails.jsx";
 import Contactus from "./pages/contactus.jsx";
+import Footer from "./components/global/footer.jsx";
 
 function App() {
 

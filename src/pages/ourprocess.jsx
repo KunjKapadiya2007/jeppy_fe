@@ -7,6 +7,8 @@ import Ourprocessstep2 from "../components/ourprocess/ourprocessstep2.jsx";
 import Ourprocessstep3 from "../components/ourprocess/ourprocessstep3.jsx";
 import Ourprocessstep4 from "../components/ourprocess/ourprocessstep4.jsx";
 import Ourprocessstep5 from "../components/ourprocess/ourprocessstep5.jsx";
+import FleppyCrew from "../components/ourprocess/fleppycrew.jsx";
+import LetsConnect from "../components/ourprocess/letsconnect.jsx";
 
 function Ourprocess() {
     return (
@@ -18,6 +20,8 @@ function Ourprocess() {
             <Ourprocessstep3/>
             <Ourprocessstep4/>
             <Ourprocessstep5/>
+            <FleppyCrew/>
+            <LetsConnect/>
         </>
     );
 }
