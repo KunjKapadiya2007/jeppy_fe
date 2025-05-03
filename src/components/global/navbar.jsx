@@ -11,7 +11,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/images/global/logo.jpg'; // Update path as needed
+import Logo from '../../assets/images/global/logo.jpg';
 
 const navItems = [
     { label: 'Our Products', path: '/products' },
