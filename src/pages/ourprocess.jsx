@@ -9,11 +9,17 @@ import Ourprocessstep4 from "../components/ourprocess/ourprocessstep4.jsx";
 import Ourprocessstep5 from "../components/ourprocess/ourprocessstep5.jsx";
 import FleppyCrew from "../components/ourprocess/fleppycrew.jsx";
 import LetsConnect from "../components/ourprocess/letsconnect.jsx";
+import bgimage from "../assets/images/global/header/header.jpg";
 
 function Ourprocess() {
     return (
         <>
-            <Header/>
+            <Header buttonText={"Let's Connect"}
+                    subtext={'From sourcing to final packaging, Fleppy’s process is designed to deliver consistent, high-quality snacks you can trust.'}
+                    heading={'From Idea to Crunch, We Do It Right.'}
+                    img={bgimage}
+                    bgcolor={'rgba(254, 195, 85, 0.7)'}
+            />
             <Snackingvision/>
             <Ourprocessstep1/>
             <Ourprocessstep2/>

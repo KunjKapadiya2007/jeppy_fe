@@ -1,8 +1,10 @@
 import React from 'react';
-import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
+import {Box, Typography, List, ListItem, ListItemText, useTheme} from '@mui/material';
 import imgstep3 from "../../assets/images/ourprocess/ManufacturingProcessSteps/Hygiene&Automation.png";
 
 function Ourprocessstep3() {
+    const theme = useTheme();
+
     const data = [
         {
             steps: "STEP 3",
@@ -18,62 +20,77 @@ function Ourprocessstep3() {
     ];
 
     return (
-        <Box sx={{ margin: '0 auto' }}>
-            {data.map((item, index) => (
-                <Box key={index} sx={{
-                    display: 'flex',
-                    py: 8,
-                    flexDirection: { xs: 'column', md: 'row' },
-                    justifyContent: 'space-between',
-                }}>
-                    <Box sx={{
-                        pl: { xs: 2, sm: 4, md: 6, lg: 6 },
-                        py: { xs: 1, sm: 2, md: 3, lg: 4 },
+        <Box sx={{ backgroundColor: `${theme.palette.saffron}` }}>
+            <Box sx={{margin: {sm: '0 30px', lg: "0 auto", xs: "0 10px"}}}>
+                {data.map((item, index) => (
+                    <Box key={index} sx={{
+                        display: 'flex',
+                        py: 8,
+                        flexDirection: {xs: 'column', lg: 'row'},
+                        justifyContent: 'space-between',
+                        alignItems: {lg:'center' , xs:"unset"},
                     }}>
-                        <Typography variant="h5" sx={{
-                            fontSize: { md: "24px", sm: "20px", xs: "16px" },
-                            lineHeight: '24px',
-                            color: "rgba(242, 138, 30, 1)",
-                            fontWeight: 300,
-                            mr: 2,
+                        <Box sx={{
+                            pl: {xs: 2, sm: 4, md: 6, lg: 6},
+                            py: {xs: 1, sm: 2, md: 3, lg: 4},
                         }}>
-                            {item.steps}
-                        </Typography>
+                            <Typography variant="h5" sx={{
+                                fontSize: {md: "24px", sm: "20px", xs: "16px"},
+                                lineHeight: '24px',
+                                color: "#FFF",
+                                fontWeight: 300,
+                                mr: 2,
+                            }}>
+                                {item.steps}
+                            </Typography>
 
-                        <Typography variant="h6" sx={{
-                            mb: 2,
-                            fontWeight: 700,
-                            fontSize: { md: "40px", sm: "36px", xs: "32px" },
-                        }}>
-                            {item.title}
-                        </Typography>
+                            <Typography variant="h6" sx={{
+                                mb: 2,
+                                fontWeight: 700,
+                                fontSize: {md: "48px", sm: "36px", xs: "32px"},
+                            }}>
+                                {item.title}
+                            </Typography>
 
-                        <List dense sx={{
-                            listStyleType: 'disc',
-                            pl: 2,
-                            fontWeight: 500,
-                            fontSize: { md: "24px", sm: "20px", xs: "16px" },
-                        }}>
-                            {item.points.map((point, pointIndex) => (
-                                <ListItem key={pointIndex} sx={{ display: 'list-item' }}>
-                                    <ListItemText primary={point} />
-                                </ListItem>
-                            ))}
-                        </List>
+                            <List
+                                dense
+                                sx={{
+                                    listStyleType: 'disc',
+                                    pl: 4,
+                                    fontWeight: 500,
+                                    fontSize: { md: '24px', sm: '20px', xs: '16px' },
+                                }}
+                            >
+                                {item.points.map((point, pointIndex) => (
+                                    <ListItem key={pointIndex} sx={{ display: 'list-item', color: '#fff' }}>
+                                        <ListItemText
+                                            primary={point}
+                                            primaryTypographyProps={{
+                                                sx: {
+                                                    fontSize: { md: '24px', sm: '20px', xs: '16px' },
+                                                    fontWeight: 500,
+                                                },
+                                            }}
+                                        />
+                                    </ListItem>
+                                ))}
+                            </List>
+
+                        </Box>
+
+                        <Box sx={{height: {lg:"470px" , xs:"100%"} , alignItems: 'center',display:"flex"}}>
+                            <img
+                                src={item.image}
+                                alt={`${item.title} illustration`}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                }}
+                            />
+                        </Box>
                     </Box>
-
-                    <Box>
-                        <img
-                            src={item.image}
-                            alt={`${item.title} illustration`}
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                            }}
-                        />
-                    </Box>
-                </Box>
-            ))}
+                ))}
+            </Box>
         </Box>
     );
 }

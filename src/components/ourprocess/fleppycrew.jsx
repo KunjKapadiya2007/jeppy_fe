@@ -5,13 +5,12 @@ import Img1 from '../../assets/images/ourprocess/ManufacturingProcessSteps/Flepp
 function FleppyCrew() {
     const theme = useTheme();
     return (
-        <Box>
+        <Box sx={{py:8}}>
             <Box
                 sx={{
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    minHeight: '100vh', // Optional: centers vertically if needed
                     px: 2
                 }}
             >

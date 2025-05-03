@@ -39,7 +39,6 @@ function LetsConnect() {
         <Container maxWidth={'xl'}>
             <Box sx={{
                 width: '100%',
-                bgcolor: '#FAFAFA',
                 borderRadius: 0,
                 overflow: 'hidden'
             }}>
@@ -54,7 +53,13 @@ function LetsConnect() {
                     Let's Connect
                 </Box>
 
-                <Grid container sx={{bgcolor: '#FAFAFA'}}>
+                <Grid container sx={{
+                    bgcolor: 'rgba(255, 255, 255, 1)',
+                    p:2,
+                    marginBottom:4,
+                    borderRadius: 4,
+                    // boxShadow:"20px 20px 80px rgba(0, 0, 0, 0.1)",
+                }}>
                     <Grid
                         item
                         size={{xs: 12, lg: 5}}
@@ -69,7 +74,7 @@ function LetsConnect() {
                             width: {lg: "491px", xs: "100%"},
                             bgcolor: `${theme.palette.saffron}`,
                             color: 'white',
-                            borderRadius: 1,
+                            borderRadius: 4,
                         }}
                     >
                         <Box>
@@ -360,10 +365,10 @@ function LetsConnect() {
                                         border: `2px solid ${theme.palette.saffron}`,
                                         transition: "0.3s",
                                         '&:hover': {
-                                        border: `2px solid ${theme.palette.saffron}`,
-                                        background: "transparent",
-                                        color: "#000"
-                                    },
+                                            border: `2px solid ${theme.palette.saffron}`,
+                                            background: "transparent",
+                                            color: "#000"
+                                        },
                                         borderRadius: '5px',
                                         px: 5,
                                         py: 1.5,

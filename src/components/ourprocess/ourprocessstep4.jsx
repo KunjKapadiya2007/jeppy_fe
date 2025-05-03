@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Grid } from '@mui/material';
+import {Box, Typography, Grid, Container} from '@mui/material';
 import imgstep4 from "../../assets/images/ourprocess/ManufacturingProcessSteps/QualityControl.png";
 import image1 from "../../assets/images/ourprocess/ManufacturingProcessSteps/createdby1.png";
 import image2 from "../../assets/images/ourprocess/ManufacturingProcessSteps/createdby2.png";
@@ -14,91 +14,94 @@ function Ourprocessstep4() {
             "Latest instruments are used to ensure snacks meet quality benchmarks."
         ],
         certifiedBy: [
-            { image: image1,},
-            { image: image2,},
-            { image: image3,},
+            {image: image1,},
+            {image: image2,},
+            {image: image3,},
         ],
         image: imgstep4,
     };
 
     return (
-        <Box sx={{ py: 8, px: { xs: 2, sm: 4, md: 8 } }}>
-            <Grid container spacing={4}>
-                {/* Left column: Step & Title */}
-                <Grid item xs={12} md={6}>
-                    <Box>
-                        <Typography variant="h5" sx={{
-                            fontSize: { md: "24px", sm: "20px", xs: "16px" },
-                            color: "rgba(242, 138, 30, 1)",
-                            fontWeight: 300,
-                            mb: 1,
+        <Box>
+            <Box sx={{py: 8, margin: {sm: '0 30px', lg: "0 auto", xs: "0 10px"}}}>
+                <Grid container spacing={4}>
+                    <Grid item size={{xs: 12, lg: 6}}>
+                        <Box sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            flexDirection: "column",
+                            height: "100%",
+                            pl: {xs: 2, sm: 4, md: 6, lg: 6},
+                            py: {xs: 1, sm: 2, md: 3, lg: 4},
                         }}>
-                            {data.step}
-                        </Typography>
-
-                        <Typography variant="h4" sx={{
-                            fontWeight: 700,
-                            fontSize: { md: "40px", sm: "36px", xs: "28px" },
-                            mb: 2,
-                        }}>
-                            {data.title}
-                        </Typography>
-                    </Box>
-                </Grid>
-
-                {/* Right column: Description and Certifications */}
-                <Grid item xs={12} md={6}>
-                    <Box>
-                        {data.description.map((line, idx) => (
-                            <Typography key={idx} sx={{
-                                fontSize: { md: "20px", sm: "18px", xs: "16px" },
+                            <Typography variant="h5" sx={{
+                                fontSize: {md: "24px", sm: "20px", xs: "16px"},
+                                color: "rgba(242, 138, 30, 1)",
+                                fontWeight: 300,
                                 mb: 1,
                             }}>
-                                {line}
+                                {data.step}
                             </Typography>
-                        ))}
 
-                        <Typography sx={{ mt: 3, fontWeight: 600 }}>
-                            Certified by:
-                        </Typography>
-
-                        <Box sx={{
-                            display: 'flex',
-                            gap: 2,
-                            mt: 1,
-                            flexWrap: 'wrap',
-                            alignItems: 'center',
-                        }}>
-                            {data.certifiedBy.map((cert, idx) => (
-                                <Box key={idx} sx={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    width: 60,
-                                }}>
-                                    <img
-                                        src={cert.image}
-                                        alt={cert.label}
-                                        style={{ width: 40, height: 40, objectFit: 'contain' }}
-                                    />
-
-                                </Box>
-                            ))}
+                            <Typography variant="h4" sx={{
+                                fontWeight: 700,
+                                fontSize: {md: "48px", sm: "36px", xs: "28px"},
+                                mb: 2,
+                            }}>
+                                {data.title}
+                            </Typography>
                         </Box>
-                    </Box>
-                </Grid>
+                    </Grid>
 
-                {/* Bottom: Full-width image */}
-                <Grid item xs={12}>
-                    <Box>
-                        <img
-                            src={data.image}
-                            alt="Quality Control Process"
-                            style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
-                        />
-                    </Box>
+                    <Grid item size={{lg: 6, xs: 12}}>
+                        <Box sx={{
+                            pl: {xs: 2, sm: 4, md: 6, lg: 6},
+                            py: {xs: 1, sm: 2, md: 3, lg: 4},
+                        }}>
+                            {data.description.map((line, idx) => (
+                                <Typography key={idx} sx={{
+                                    fontSize: {md: "24px", sm: "18px", xs: "16px"},
+                                    fontWeight: 500,
+                                    mb: 1,
+                                }}>
+                                    {line}
+                                </Typography>
+                            ))}
+
+                            <Typography sx={{my: 3, fontWeight: 700, fontSize: {md: "24px", sm: "18px", xs: "16px"},}}>
+                                Certified by:
+                            </Typography>
+
+                            <Box sx={{
+                                display: 'flex',
+                                gap: 2,
+                                mt: 1,
+                                flexWrap: 'wrap',
+                                alignItems: 'center',
+
+                            }}>
+                                {data.certifiedBy.map((cert, idx) => (
+                                    <Box key={idx} sx={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                    }}>
+                                        <img
+                                            src={cert.image}
+                                            alt={cert.label}
+                                            style={{width: 65, height: 65, objectFit: 'contain'}}
+                                        />
+
+                                    </Box>
+                                ))}
+                            </Box>
+                        </Box>
+                    </Grid>
                 </Grid>
-            </Grid>
+            </Box>
+            <Box sx={{height: {md:"600px" , xs:"100%"} , width: "100%"}}>
+                <img src={imgstep4} alt="imgstep4" style={{ width: '100%' , height: '100%' , objectFit: 'cover' }} />
+            </Box>
         </Box>
     );
 }

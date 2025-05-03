@@ -26,13 +26,14 @@ function Ourprocessstep1() {
     ];
 
     return (
-        <Box sx={{ margin: '0 auto'}}>
+        <Box sx={{ margin: {sm:'0 30px' , lg:"0 auto" , xs:"0 10px"}}}>
             {data.map((item, index) => (
                 <Box sx={{
                     display: 'flex',
                     py:8,
-                    flexDirection: { xs: 'column', md: 'row' },
+                    flexDirection: { xs: 'column', lg: 'row' },
                     justifyContent: 'space-between',
+                    alignItems:"center"
                 }}>
                     <Box key={index} sx={{
                         pl: { xs: 2, sm: 4, md: 6, lg: 6 },
@@ -45,7 +46,6 @@ function Ourprocessstep1() {
                             color: "rgba(242, 138, 30, 1)",
                             fontWeight: 300,
                             mr: 2,
-                            // minWidth: '80px' // Ensures consistent spacing for step number
                         }}>
                             {item.steps}
                         </Typography>
@@ -55,7 +55,7 @@ function Ourprocessstep1() {
                                     <Typography variant="h6" sx={{
                                         mb: 2,
                                         fontWeight: '700',
-                                        fontSize: { md: "40px", sm: "36px", xs: "32px" },
+                                        fontSize: { md: "48px", sm: "36px", xs: "32px" },
                                     }}>
                                         {item.title}
                                     </Typography>
@@ -71,10 +71,26 @@ function Ourprocessstep1() {
                                                 display: 'list-item',
                                             }}>
                                                 {typeof point === 'string' ? (
-                                                    <ListItemText primary={point}/>
+                                                    <ListItemText
+                                                        primary={point}
+                                                        primaryTypographyProps={{
+                                                            sx: {
+                                                                fontSize: { md: '24px', sm: '20px', xs: '16px' },
+                                                                fontWeight: 500,
+                                                            },
+                                                        }}
+                                                    />
                                                 ) : (
                                                     <>
-                                                        <ListItemText primary={point.text}/>
+                                                        <ListItemText
+                                                            primary={point.text}
+                                                            primaryTypographyProps={{
+                                                                sx: {
+                                                                    fontSize: { md: '24px', sm: '20px', xs: '16px' },
+                                                                    fontWeight: 500,
+                                                                },
+                                                            }}
+                                                        />
                                                         <List dense sx={{
                                                             listStyleType: 'disc',
                                                         }}>
@@ -84,7 +100,15 @@ function Ourprocessstep1() {
                                                                     p: 0,
                                                                     pl: 1
                                                                 }}>
-                                                                    <ListItemText primary={subpoint}/>
+                                                                    <ListItemText
+                                                                        primary={subpoint}
+                                                                        primaryTypographyProps={{
+                                                                            sx: {
+                                                                                fontSize: { md: '24px', sm: '20px', xs: '16px' },
+                                                                                fontWeight: 500,
+                                                                            },
+                                                                        }}
+                                                                    />
                                                                 </ListItem>
                                                             ))}
                                                         </List>

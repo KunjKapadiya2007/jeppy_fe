@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, Typography, Button, useTheme} from '@mui/material';
-import img from '../../assets/home/heroSection/0b644f6836da58b9315ff1f2cf1a46e43de00d6f.png';
+import img from '../../assets/images/home/heroSection/0b644f6836da58b9315ff1f2cf1a46e43de00d6f.png';
 
 function HeroSection() {
 
@@ -47,15 +47,19 @@ function HeroSection() {
                     <Button
                         variant="contained"
                         sx={{
-                            backgroundColor: '#E82B09',
+                            backgroundColor: `${theme.palette.headerButton}`,
                             color: '#fff',
                             p: {sm:"22px 32px" , xs:"15px 22px"},
                             fontWeight: 600,
                             fontSize: {md: "24px", sm: "20px", xs: "16px"},
                             textTransform: 'none',
                             borderRadius: '50px',
+                            border:`2px solid transparent`,
+                            transition:"0.3s",
                             '&:hover': {
-                                backgroundColor: '#c32e0f',
+                                backgroundColor: '#FFF',
+                                color: `${theme.palette.headerButton}`,
+                                border:`2px solid ${theme.palette.headerButton}`,
                             },
                         }}
                     >
