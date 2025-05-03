@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, Typography, Button, useTheme} from '@mui/material';
-import img from '../../assets/home/heroSection/0b644f6836da58b9315ff1f2cf1a46e43de00d6f.png';
+import img from '../../assets/images/home/heroSection/0b644f6836da58b9315ff1f2cf1a46e43de00d6f.png';
 
 function HeroSection() {
 
@@ -23,16 +23,14 @@ function HeroSection() {
             }}
         >
 
-            {/* Left Text Section */}
-            <Box sx={{flex: 1}}>
+            <Box sx={{flex: 1 , display: 'flex', alignItems: {xs:'center' , sm:"unset"} , flexDirection:"column"}}>
                 <Typography variant="h3"
                             sx={{
                                 fontWeight: 800,
-                                fontSize: {md: "64px", sm: "48px", xs: "36px"},
+                                fontSize: {md: "64px", sm: "48px", xs: "32px"},
                                 color: "#172600",
-                                display: {xs: "flex", sm: "unset"},
-                                justifyContent: "center",
-                                alignItems: "center"
+                                textAlign: {xs:"center" , sm:"unset"},
+                                mt:{xs:4 , sm:"unset"}
                             }}>
                     Crave the Crunch.
                 </Typography>
@@ -40,7 +38,8 @@ function HeroSection() {
                     fontSize: {md: "24px", sm: "20px", xs: "16px"},
                     color: "#000",
                     lineHeight: '32px',
-                    py: 4
+                    py: {sm:4 , xs:2},
+                    textAlign: {xs:"center" , sm:"unset"},
                 }}>
                     From desk to travel, always ready to crunch.
                 </Typography>
@@ -48,15 +47,19 @@ function HeroSection() {
                     <Button
                         variant="contained"
                         sx={{
-                            backgroundColor: '#E82B09',
+                            backgroundColor: `${theme.palette.headerButton}`,
                             color: '#fff',
-                            p: "22px 32px",
+                            p: {sm:"22px 32px" , xs:"15px 22px"},
                             fontWeight: 600,
                             fontSize: {md: "24px", sm: "20px", xs: "16px"},
                             textTransform: 'none',
                             borderRadius: '50px',
+                            border:`2px solid transparent`,
+                            transition:"0.3s",
                             '&:hover': {
-                                backgroundColor: '#c32e0f',
+                                backgroundColor: '#FFF',
+                                color: `${theme.palette.headerButton}`,
+                                border:`2px solid ${theme.palette.headerButton}`,
                             },
                         }}
                     >

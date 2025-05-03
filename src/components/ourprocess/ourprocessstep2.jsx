@@ -22,31 +22,35 @@ function Ourprocessstep2() {
     ];
 
     return (
-        <Box sx={{ margin: '0 auto' }}>
+        <Box sx={{ margin: {sm:'0 30px' , lg:"0 auto" , xs:"0 10px"}}}>
             {data.map((item, index) => (
                 <Box key={index} sx={{
                     display: 'flex',
                     py: 8,
-                    flexDirection: { xs: 'column', md: 'row' },
-                    justifyContent: 'space-between',
+                    flexDirection: { xs: 'column', lg: 'row' },
+                    justifyContent: 'start',
                 }}>
-                    <Box>
+                    <Box sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }}>
                         <img
                             src={item.image}
                             alt={`${item.title} illustration`}
-                            style={{ width: '100%', height: '100%' }}
+                            style={{ width: '100%', height: '100%' , objectFit:"contain" }}
                         />
                     </Box>
 
                     <Box sx={{
                         py: { xs: 2, sm: 3, md: 4, lg: 4 },
+                        pl: {lg:8 , xs:"unset"}
                     }}>
                         <Typography variant="h5" sx={{
                             fontSize: { md: "24px", sm: "20px", xs: "16px" },
                             lineHeight: '24px',
                             color: "rgba(242, 138, 30, 1)",
                             fontWeight: 300,
-                            mr: 2,
+                            // mr: 2,
                         }}>
                             {item.steps}
                         </Typography>
@@ -54,20 +58,29 @@ function Ourprocessstep2() {
                         <Typography variant="h6" sx={{
                             mb: 2,
                             fontWeight: 700,
-                            fontSize: { md: "40px", sm: "36px", xs: "32px" },
+                            fontSize: { md: "48px", sm: "36px", xs: "32px" },
+                            textWrap:"wrap",
                         }}>
                             {item.title}
                         </Typography>
 
                         <List dense sx={{
                             listStyleType: 'disc',
-                            pl: 2,
+                            pl: 3,
                             fontWeight: 500,
                             fontSize: { md: "24px", sm: "20px", xs: "16px" },
                         }}>
                             {item.points.map((point, pointIndex) => (
                                 <ListItem key={pointIndex} sx={{ display: 'list-item' }}>
-                                    <ListItemText primary={point} />
+                                    <ListItemText
+                                        primary={point}
+                                        primaryTypographyProps={{
+                                            sx: {
+                                                fontSize: { md: '24px', sm: '20px', xs: '16px' },
+                                                fontWeight: 500,
+                                            },
+                                        }}
+                                    />
                                 </ListItem>
                             ))}
                         </List>

@@ -4,7 +4,8 @@ const theme = createTheme({
 
     palette: {
         yellow: '#FECB5D',
-        saffron:"#F28A1E"
+        saffron:"#F28A1E",
+        headerButton: "#E82B09",
     },
 });
 
