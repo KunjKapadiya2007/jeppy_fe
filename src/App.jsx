@@ -7,6 +7,8 @@ import About from "./pages/about.jsx";
 import OurProducts from "./pages/ourProducts.jsx";
 import ProductDetails from "./pages/productDetails.jsx";
 import Contactus from "./pages/contactus.jsx";
+import Footer from "./components/global/footer.jsx";
+import ProductSlider from "./components/productDetails/productSlider.jsx";
 
 function App() {
 
@@ -17,6 +19,7 @@ function App() {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/products" element={<OurProducts/>}/>
                 <Route path="/product/:id" element={<ProductDetails />} />
+                <Route path="/product/:id" element={<ProductSlider />} />
                 <Route path="/process" element={<Ourprocess/>}/>
                 <Route path="/contact" element={<Contactus/>}/>
                 <Route path="/about" element={<About/>}/>
