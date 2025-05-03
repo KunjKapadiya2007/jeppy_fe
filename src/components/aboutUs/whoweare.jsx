@@ -4,9 +4,7 @@ import palletimg from "../../assets/images/aboutus/pallets.jpg";
 
 const WhoWeAre = () => {
     return (<>
-        <Box sx={{
-            position: 'relative',
-        }}>
+        <Box >
             <Box sx={{
                 backgroundColor: 'rgba(242, 138, 30, 1)',
             }}>
@@ -15,7 +13,13 @@ const WhoWeAre = () => {
                     fontSize: {md: "36px", sm: "32px", xs: "28px"},
                     textAlign: 'center',
                     color: 'white',
-                    py:7
+                    py: {
+                        xs: 3,
+                        sm: 3,
+                        md: 3,
+                        lg: 5,
+                        xl: 5,
+                    }
                 }}>Who we are</Typography>
                 <Container maxWidth="xl" sx={{ py: {
                         xs: 0,
@@ -94,7 +98,7 @@ const WhoWeAre = () => {
                         xl: 5,
                     },}}>
                     <Grid container spacing={5}>
-                        <Grid item size={{xs: 12, md: 6}}>
+                        <Grid item size={{xs: 12, lg: 6}}>
                             <Typography sx={{
                                 fontWeight: 500,
                                 fontSize: {xs: '16px', sm: '20px', md: '24px'},
@@ -114,53 +118,45 @@ const WhoWeAre = () => {
                 </Container>
             </Box>
         </Box>
-        <Box>
-            {/*<Box*/}
-            {/*    component="img"*/}
-            {/*    src={palletimg}*/}
-            {/*    alt="Pallets"*/}
-            {/*    sx={{*/}
-            {/*        width: '841px',*/}
-            {/*        height: '561px',*/}
-            {/*        objectFit: 'cover',*/}
-            {/*        position: 'absolute',*/}
-            {/*        top: 355,*/}
-            {/*        right: 0,*/}
-            {/*    }}*/}
-            {/*/>*/}
+        <Box sx={{ position: 'relative' }}>
             <Box
                 sx={{
                     display: {
                         xs: 'none',
                         sm: 'none',
                         md: 'none',
-                        lg: 'block', // Hide on large screens and above
+                        lg: 'block',
                         xl: 'block',
                     },
-                }}>
+                }}
+            >
                 <Box
                     component="img"
                     src={palletimg}
                     alt="Pallets"
                     sx={{
                         width: {
-                            xs: '100%',       // Full width on extra-small screens
+                            xs: '100%',
                             sm: '100%',
                             md: '600px',
-                            lg: '650px',
-                            xl: '841px',
+                            lg: '600px',
+                            xl: '800px',
                         },
                         height: {
-                            height: '561px'
+                            xs: 'auto',
+                            sm: 'auto',
+                            md: 'auto',
+                            lg: '561px',
+                            xl: '561px',
                         },
                         objectFit: 'cover',
                         position: 'absolute',
-                        top: {
+                        bottom: {
                             xs: 200,
                             sm: 250,
                             md: 300,
-                            lg: 330,
-                            xl: 355,
+                            lg: "-20px",
+                            xl:"-20px",
                         },
                         right: {
                             xs: 0,
@@ -171,11 +167,12 @@ const WhoWeAre = () => {
                             sm: 6,
                             md: 8,
                         },
+                        zIndex: 10,
                     }}
                 />
             </Box>
-
         </Box>
+
     </>);
 };
 
