@@ -68,12 +68,12 @@ function Milestone() {
                 <Box
                     sx={{
                         display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: "center",
+                        flexDirection: { xs: "column", md: "row" },
+                        justifyContent: { xs: "center", md: "space-between" },
+                        alignItems: { xs: "center", md: "center" },
                         width: { xs: "100%", md: "65%" },
                         ml: { md: 10 },
-                        gap: { xs: 2, sm: 4 }
+                        gap: { xs: 4, md: 4 }
                     }}
                 >
                     {/* 300+ Shapes */}
@@ -81,7 +81,8 @@ function Milestone() {
                         sx={{
                             display: "flex",
                             flexDirection: "column",
-                            alignItems: "center"
+                            alignItems: "center",
+                            width: { xs: "100%", md: "auto" }
                         }}
                     >
                         <Typography
@@ -110,7 +111,8 @@ function Milestone() {
                         sx={{
                             display: "flex",
                             flexDirection: "column",
-                            alignItems: "center"
+                            alignItems: "center",
+                            width: { xs: "100%", md: "auto" }
                         }}
                     >
                         <Typography
@@ -141,7 +143,8 @@ function Milestone() {
                         sx={{
                             display: "flex",
                             flexDirection: "column",
-                            alignItems: "center"
+                            alignItems: "center",
+                            width: { xs: "100%", md: "auto" }
                         }}
                     >
                         <Typography
@@ -172,7 +175,8 @@ function Milestone() {
                         sx={{
                             display: "flex",
                             flexDirection: "column",
-                            alignItems: "center"
+                            alignItems: "center",
+                            width: { xs: "100%", md: "auto" }
                         }}
                     >
                         <Typography

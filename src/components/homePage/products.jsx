@@ -96,7 +96,7 @@ function Products() {
                     {filteredProducts.map((product) => (
                         <Grid
                             item
-                            xs={12}
+                            xs={6}
                             sm={6}
                             md={4}
                             lg={3}
