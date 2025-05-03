@@ -36,10 +36,10 @@ const Header = () => {
                 <Typography
                     variant="h3"
                     sx={{
-                        fontWeight: 'bold',
+                        fontWeight: 700,
                         mb: 3,
                         color: '#000',
-                        fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
+                        fontSize: {md: "64px", sm: "48px", xs: "36px"},
                     }}
                 >
                     {heading}
@@ -49,7 +49,7 @@ const Header = () => {
                     sx={{
                         mb: 5,
                         color: '#333',
-                        fontSize: { xs: '1rem', sm: '1.1rem' },
+                        fontSize: {md: "24px", sm: "20px", xs: "16px"},
                     }}
                 >
                     {subtext}
@@ -57,14 +57,15 @@ const Header = () => {
                 <Button
                     variant="contained"
                     sx={{
-                        backgroundColor: '#e53935',
-                        px: 4,
-                        py: 1.5,
-                        fontSize: '1rem',
-                        borderRadius: '30px',
+                        backgroundColor: '#E82B09',
+                        color: '#fff',
+                        p: "22px 32px",
+                        fontWeight: 600,
+                        fontSize: {md: "24px", sm: "20px", xs: "16px"},
                         textTransform: 'none',
+                        borderRadius: '50px',
                         '&:hover': {
-                            backgroundColor: '#d32f2f',
+                            backgroundColor: '#c32e0f',
                         },
                     }}
                 >
