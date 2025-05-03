@@ -10,8 +10,7 @@ function AboutUs() {
     return (
         // <Container maxWidth="xl">
             <Box sx={{
-                // py: { xs: 4, sm: 5, md: 6 },
-                // px: { xs: 2, sm: 3, md: 4 }
+                padding:"90px 0"
             }}>
                 {/* Section Title */}
                 <Typography
@@ -30,7 +29,7 @@ function AboutUs() {
                 <Box sx={{
                     display: "flex",
                     flexDirection: { xs: "column", md: "row" },
-                    alignItems: { xs: "center", md: "flex-start" },
+                    alignItems: "center",
                     gap: { xs: 4, md: 6 },
                     ml: { xs: 0, md: 6 },
                 }}>
@@ -57,11 +56,11 @@ function AboutUs() {
                         <Typography
                             variant="body1"
                             sx={{
-                                fontSize: { xs: "16px", sm: "18px", md: "24px" },
+                                fontSize: { xs: "16px", sm: "18px", md: "20px" , lg: "24px" },
                                 fontWeight: 500,
                                 lineHeight: { xs: "28px", md: "34px" },
                                 mb: 4,
-                                textAlign: { xs: "center", md: "left" }
+                                textAlign: { xs: "center", md: "justify" }
                             }}
                         >
                             The demand for snacks is rising around the world, snack producing companies are in fierce competition to match this demand. Our company JAYANT SNACKS AND BEVERAGES PVT. LTD. is a leading manufacturer and exporter of ready to fry Papad Snacks. It was founded in the year 1987 in the city of Rajkot in the western state of India. The company popularly known as "JEPPY" and "WOW" has 30 + years of extensive experience in the field of Snack Papad production. Today JEPPY is a prime leader in the Snacks Papad industry in India.
@@ -104,8 +103,8 @@ function AboutUs() {
                             src={Img1}
                             alt="About Us Company Image"
                             sx={{
-                                width: { xs: "280px", sm: "400px", md: "500px", lg: "600px" },
-                                height: { xs: "280px", sm: "400px", md: "500px", lg: "600px" },
+                                width: { xs: "280px", sm: "400px", md: "100%", lg: "100%" },
+                                height: { xs: "280px", sm: "400px", md: "100%", lg: "100%" },
                                 maxWidth: "100%",
                                 objectFit: "contain"
                             }}

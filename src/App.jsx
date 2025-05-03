@@ -21,10 +21,10 @@ function App() {
                 <Route path="/product/:id" element={<ProductDetails />} />
                 <Route path="/product/:id" element={<ProductSlider />} />
                 <Route path="/process" element={<Ourprocess/>}/>
-                <Route path="/contact" element={<Contactus/>}/>
                 <Route path="/about" element={<About/>}/>
+                <Route path="/contact" element={<Contactus/>}/>
             </Routes>
-            <Footer />
+            <Footer/>
         </>
     )
 }

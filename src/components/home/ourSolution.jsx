@@ -1,9 +1,9 @@
 import React from 'react';
 import {Box, Container, Typography} from "@mui/material";
-import vector1 from '../../assets/home/ourSolution/Group 1000001767.png'
-import vector2 from '../../assets/home/ourSolution/Vector (2).png'
-import vector3 from '../../assets/home/ourSolution/Group.png'
-import vector4 from '../../assets/home/ourSolution/Vector 5.png'
+import vector1 from '../../assets/images/home/ourSolution/Group 1000001767.png'
+import vector2 from '../../assets/images/home/ourSolution/Vector (2).png'
+import vector3 from '../../assets/images/home/ourSolution/Group.png'
+import vector4 from '../../assets/images/home/ourSolution/Vector 5.png'
 
 function OurSolution() {
 
