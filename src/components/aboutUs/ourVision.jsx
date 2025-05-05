@@ -34,7 +34,7 @@ function OurVision() {
                                 borderRadius: "12px",
                                 margin: "10px 0",
                                 backgroundColor: "#fff",
-                                padding: { xs: '40px 50px', sm: '50px 40px' },
+                                padding: { xs: '20px', sm: '50px 40px'},
                                 boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
                                 display: 'flex',
                                 flexDirection: 'column',

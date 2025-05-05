@@ -19,6 +19,7 @@ function Ourprocess() {
                     heading={'From Idea to Crunch, We Do It Right.'}
                     img={bgimage}
                     bgcolor={'rgba(254, 195, 85, 0.7)'}
+                    path={'/contact'}
             />
             <Snackingvision/>
             <Ourprocessstep1/>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {
     Box,
     Container,
@@ -9,7 +9,6 @@ import {
     InputAdornment,
     IconButton,
     Link as MuiLink,
-    useMediaQuery,
     useTheme,
 } from '@mui/material';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
@@ -17,13 +16,19 @@ import Logo from '../../assets/images/global/logo.jpg';
 
 const Footer = () => {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-    const isTablet = useMediaQuery(theme.breakpoints.down('md'));
+    const navigate = useNavigate();
+
+    const quickLink = [
+        { label: 'Our Products', path: '/products' },
+        { label: 'Our Process', path: '/process' },
+        { label: 'About us', path: '/about' },
+        { label: 'Contact', path: '/contact' },
+    ]
 
     return (
-        <Box sx={{backgroundColor: '#f78c1f', color: 'white', pt: {xs: 4, sm: 5, md: 6}, pb: 2}}>
+        <Box sx={{backgroundColor: `${theme.palette.saffron}`, color: 'white', pt: {xs: 4, sm: 5, md: 6}, pb: 2}}>
             <Container maxWidth="xl">
-                <Box sx={{mb: {xs: 3, md: 5}, display: 'flex', justifyContent: {xs: 'center', md: 'flex-start'}}}>
+                <Box component={Link} to="/" sx={{mb: {xs: 3, md: 5}, display: 'flex', justifyContent: {xs: 'center', md: 'flex-start'}}}>
                     <Box component="img" src={Logo} alt="Logo" sx={{height: {xs: 30, sm: 40}}}/>
                 </Box>
 
@@ -140,11 +145,9 @@ const Footer = () => {
                                     flexDirection: 'column',
                                     alignItems: {xs: 'center', md: 'flex-start'}
                                 }}>
-                                    {['Our Products', 'Our Process', 'About Us', 'Contact'].map((text) => (
+                                    {quickLink.map((text) => (
                                         <Box
                                             key={text}
-                                            component={Link}
-                                            to="/"
                                             sx={{
                                                 display: 'block',
                                                 color: 'white',
@@ -154,8 +157,9 @@ const Footer = () => {
                                                 mb: 1,
                                                 '&:hover': {textDecoration: 'underline'},
                                             }}
+                                            onClick={() => navigate(text.path)}
                                         >
-                                            {text}
+                                            {text.label}
                                         </Box>
                                     ))}
                                 </Box>
@@ -273,15 +277,14 @@ const Footer = () => {
                         © COPYRIGHT 2004 – 2025 JAYANT SNACKS AND BEVERAGES PVT. LTD. ALL RIGHTS RESERVED. POWERED
                         BY{' '}
                         <span style={{marginRight: '4px'}}></span>
-                        <MuiLink
-                            href="https://websmaniac.com"
+                        <Box
                             target="_blank"
                             rel="noopener"
                             underline="hover"
                             sx={{color: 'white'}}
                         >
                             WEBSMANIAC INC.
-                        </MuiLink>
+                        </Box>
                     </Box>
                 </Box>
             </Container>

@@ -30,7 +30,6 @@ const [a,setA] = useState(null);
     }, [location]);
     const [menuOpen, setMenuOpen] = useState(false);
   const theme = useTheme();
-        console.log("Is Product Route:", a);
 
     const toggleMenu = () => setMenuOpen((prev) => !prev);
 

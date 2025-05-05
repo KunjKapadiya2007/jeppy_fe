@@ -4,7 +4,7 @@ import {Box, Container} from "@mui/material";
 function GlobelAbout() {
     return (
         <>
-            <Box>
+            <Box sx={{py: "50px"}}>
                 <Container maxWidth={"xl"}>
                     <Box sx={{padding: "50px 0"}}>
                         <Box sx={{

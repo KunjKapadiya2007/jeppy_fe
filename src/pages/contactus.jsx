@@ -13,6 +13,7 @@ function Contactus() {
                     buttonText={'Home'}
                     img={bgimage}
                     bgcolor={'rgba(254, 195, 85, 0.4)'}
+                    path={'/'}
             />
             <Contact/>
             <ConnectToYt/>

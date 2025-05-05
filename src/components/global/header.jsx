@@ -1,12 +1,15 @@
 import React from 'react';
 import {Box, Button, Container, Typography, useTheme} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 
-function Header( {heading , subtext ,buttonText , img , bgcolor} ) {
+function Header( {heading , subtext ,buttonText , img , bgcolor , path} ) {
 
     const theme = useTheme();
 
+    const navigate = useNavigate();
+
     return (
-        <Box
+        <Box id={'header'}
             sx={{
                 position: 'relative',
                 minHeight: '100vh',
@@ -72,6 +75,7 @@ function Header( {heading , subtext ,buttonText , img , bgcolor} ) {
                             border:`2px solid ${theme.palette.headerButton}`,
                         },
                     }}
+                    onClick={() => navigate(path)}
                 >
                     {buttonText}
                 </Button>

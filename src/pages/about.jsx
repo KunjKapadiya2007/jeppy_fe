@@ -15,6 +15,7 @@ function About() {
                     heading={'From Idea to Crunch, We Do It Right.'}
                     img={bgimage}
                     bgcolor={'rgba(254, 195, 85, 0.5)'}
+                    path={'/contact'}
             />
             <OurVision />
             <WhoWeAre/>
