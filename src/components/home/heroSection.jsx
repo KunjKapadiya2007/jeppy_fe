@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect, useRef} from 'react';
+import React, { useLayoutEffect, useRef} from 'react';
 import { Box, Typography, Button, useTheme, useMediaQuery } from '@mui/material';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,7 +7,6 @@ import veggieSnacks from '../../assets/images/home/heroSection/92db2a4174caa0e84
 import potatoSnacks from '../../assets/images/home/heroSection/1c64d0bd438fefc8d877ff870b73f607967e3f4a.png';
 import cerealBased from '../../assets/images/home/heroSection/0a082ddeaee5d26b3d24afd90a0a9c65051d5224.png';
 import glutenFree from '../../assets/images/home/heroSection/373bff250ce1a39db4ad5fab1df63cdd6de999d5.png';
-import {useLocation} from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
