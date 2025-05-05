@@ -37,7 +37,7 @@ function Ourprocessstep5() {
                             maxWidth: '600px',
                         }}>
                             <Typography variant="h5" sx={{
-                                fontSize: {md: "24px", sm: "20px", xs: "16px"},
+                                fontSize: {xl: "24px", sm: "20px", xs: "16px"},
                                 lineHeight: '24px',
                                 fontWeight: 300,
                                 mb: 1,
@@ -49,14 +49,14 @@ function Ourprocessstep5() {
                             <Typography variant="h6" sx={{
                                 mb: 2,
                                 fontWeight: 700,
-                                fontSize: {md: "48px", sm: "36px", xs: "32px"},
+                                fontSize: {xl: "48px", sm: "36px", xs: "32px"},
                                 color: "#FFF",
                             }}>
                                 {item.title}
                             </Typography>
 
                             <Typography sx={{
-                                fontSize: {md: "24px", sm: "20px", xs: "18px"},
+                                fontSize: {xl: "24px", sm: "20px", xs: "18px"},
                                 fontWeight: 500,
                                 mb: 1,
                                 color:"#FFF"
@@ -68,7 +68,7 @@ function Ourprocessstep5() {
                                 listStyleType: 'disc',
                                 pl: 2,
                                 fontWeight: 500,
-                                fontSize: {md: "24px", sm: "20px", xs: "18px"},
+                                fontSize: {xl: "24px", sm: "20px", xs: "18px"},
                             }}>
                                 {item.points.map((point, pointIndex) => (
                                     <ListItem key={pointIndex} sx={{display: 'list-item' , color:"#FFF"}}>
@@ -76,7 +76,7 @@ function Ourprocessstep5() {
                                             primary={point}
                                             primaryTypographyProps={{
                                                 sx: {
-                                                    fontSize: { md: '24px', sm: '20px', xs: '16px' },
+                                                    fontSize: { xl: '24px', sm: '20px', xs: '16px' },
                                                     fontWeight: 500,
                                                 },
                                             }}
@@ -87,7 +87,7 @@ function Ourprocessstep5() {
 
                             <Typography sx={{
                                 mt: 2,
-                                fontSize: {md: "24px", sm: "20px", xs: "18px"},
+                                fontSize: {xl: "24px", sm: "20px", xs: "18px"},
                                 fontWeight: 500,
                                 color:"#FFF"
                             }}>

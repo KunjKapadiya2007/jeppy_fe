@@ -35,7 +35,7 @@ function Ourprocessstep4() {
                             py: {xs: 1, sm: 2, md: 3, lg: 4},
                         }}>
                             <Typography variant="h5" sx={{
-                                fontSize: {md: "24px", sm: "20px", xs: "16px"},
+                                fontSize: {xl: "24px", sm: "20px", xs: "16px"},
                                 color: "rgba(242, 138, 30, 1)",
                                 fontWeight: 300,
                                 mb: 1,
@@ -45,7 +45,7 @@ function Ourprocessstep4() {
 
                             <Typography variant="h4" sx={{
                                 fontWeight: 700,
-                                fontSize: {md: "48px", sm: "36px", xs: "28px"},
+                                fontSize: {xl: "48px", sm: "36px", xs: "28px"},
                                 mb: 2,
                             }}>
                                 {data.title}
@@ -60,7 +60,7 @@ function Ourprocessstep4() {
                         }}>
                             {data.description.map((line, idx) => (
                                 <Typography key={idx} sx={{
-                                    fontSize: {md: "24px", sm: "18px", xs: "16px"},
+                                    fontSize: {xl: "24px", sm: "18px", xs: "16px"},
                                     fontWeight: 500,
                                     mb: 1,
                                 }}>
@@ -68,7 +68,7 @@ function Ourprocessstep4() {
                                 </Typography>
                             ))}
 
-                            <Typography sx={{my: 3, fontWeight: 700, fontSize: {md: "24px", sm: "18px", xs: "16px"},}}>
+                            <Typography sx={{my: 3, fontWeight: 700, fontSize: {xl: "24px", sm: "18px", xs: "16px"},}}>
                                 Certified by:
                             </Typography>
 

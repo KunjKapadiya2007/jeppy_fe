@@ -41,7 +41,7 @@ function Ourprocessstep1() {
                     }}
                     >
                         <Typography variant="h5" sx={{
-                            fontSize: { md: "24px", sm: "20px", xs: "16px" },
+                            fontSize: { xl: "24px", sm: "20px", xs: "16px" },
                             lineHeight: '24px',
                             color: "rgba(242, 138, 30, 1)",
                             fontWeight: 300,
@@ -55,7 +55,7 @@ function Ourprocessstep1() {
                                     <Typography variant="h6" sx={{
                                         mb: 2,
                                         fontWeight: '700',
-                                        fontSize: { md: "48px", sm: "36px", xs: "32px" },
+                                        fontSize: { xl: "48px", sm: "36px", xs: "32px" },
                                     }}>
                                         {item.title}
                                     </Typography>
@@ -63,7 +63,7 @@ function Ourprocessstep1() {
                                         listStyleType: 'disc',
                                         pl: 2 ,
                                         fontWeight: 500,
-                                        fontSize: { md: "24px", sm: "20px", xs: "16px" },
+                                        fontSize: { xl: "24px", sm: "20px", xs: "16px" },
 
                                     }}>
                                         {item.points.map((point, pointIndex) => (
@@ -75,7 +75,7 @@ function Ourprocessstep1() {
                                                         primary={point}
                                                         primaryTypographyProps={{
                                                             sx: {
-                                                                fontSize: { md: '24px', sm: '20px', xs: '16px' },
+                                                                fontSize: { xl: '24px', sm: '20px', xs: '16px' },
                                                                 fontWeight: 500,
                                                             },
                                                         }}
@@ -86,7 +86,7 @@ function Ourprocessstep1() {
                                                             primary={point.text}
                                                             primaryTypographyProps={{
                                                                 sx: {
-                                                                    fontSize: { md: '24px', sm: '20px', xs: '16px' },
+                                                                    fontSize: { xl: '24px', sm: '20px', xs: '16px' },
                                                                     fontWeight: 500,
                                                                 },
                                                             }}
@@ -104,7 +104,7 @@ function Ourprocessstep1() {
                                                                         primary={subpoint}
                                                                         primaryTypographyProps={{
                                                                             sx: {
-                                                                                fontSize: { md: '24px', sm: '20px', xs: '16px' },
+                                                                                fontSize: { xl: '24px', sm: '20px', xs: '16px' },
                                                                                 fontWeight: 500,
                                                                             },
                                                                         }}

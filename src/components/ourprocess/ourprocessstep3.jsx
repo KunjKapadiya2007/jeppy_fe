@@ -35,7 +35,7 @@ function Ourprocessstep3() {
                             py: {xs: 1, sm: 2, md: 3, lg: 4},
                         }}>
                             <Typography variant="h5" sx={{
-                                fontSize: {md: "24px", sm: "20px", xs: "16px"},
+                                fontSize: {xl: "24px", sm: "20px", xs: "16px"},
                                 lineHeight: '24px',
                                 color: "#FFF",
                                 fontWeight: 300,
@@ -47,7 +47,7 @@ function Ourprocessstep3() {
                             <Typography variant="h6" sx={{
                                 mb: 2,
                                 fontWeight: 700,
-                                fontSize: {md: "48px", sm: "36px", xs: "32px"},
+                                fontSize: {xl: "48px", sm: "36px", xs: "32px"},
                             }}>
                                 {item.title}
                             </Typography>
@@ -58,7 +58,7 @@ function Ourprocessstep3() {
                                     listStyleType: 'disc',
                                     pl: 4,
                                     fontWeight: 500,
-                                    fontSize: { md: '24px', sm: '20px', xs: '16px' },
+                                    fontSize: { xl: '24px', sm: '20px', xs: '16px' },
                                 }}
                             >
                                 {item.points.map((point, pointIndex) => (
@@ -67,7 +67,7 @@ function Ourprocessstep3() {
                                             primary={point}
                                             primaryTypographyProps={{
                                                 sx: {
-                                                    fontSize: { md: '24px', sm: '20px', xs: '16px' },
+                                                    fontSize: { xl: '24px', sm: '20px', xs: '16px' },
                                                     fontWeight: 500,
                                                 },
                                             }}

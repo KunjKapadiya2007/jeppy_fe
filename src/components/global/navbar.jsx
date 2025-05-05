@@ -81,13 +81,14 @@ function Navbar() {
                     </Box>
 
                     {/* Mobile Menu Icon */}
-                    <IconButton
-                        edge="end"
-                        onClick={toggleMenu}
-                        sx={{ display: { xs: 'block', md: 'none' } }}
-                    >
-                        {menuOpen ? <CloseIcon /> : <MenuIcon />}
-                    </IconButton>
+                <IconButton
+                    edge="end"
+                    onClick={toggleMenu}
+                    sx={{ display: { xs: 'block', md: 'none' } }}
+                >
+                    {menuOpen ? <CloseIcon /> : <MenuIcon />}
+                </IconButton>
+
                 </Box>
 
                 {/* Mobile Dropdown Drawer Inside Navbar */}

@@ -46,7 +46,7 @@ function Ourprocessstep2() {
                         pl: {lg:8 , xs:"unset"}
                     }}>
                         <Typography variant="h5" sx={{
-                            fontSize: { md: "24px", sm: "20px", xs: "16px" },
+                            fontSize: { xl: "24px", sm: "20px", xs: "16px" },
                             lineHeight: '24px',
                             color: "rgba(242, 138, 30, 1)",
                             fontWeight: 300,
@@ -58,7 +58,7 @@ function Ourprocessstep2() {
                         <Typography variant="h6" sx={{
                             mb: 2,
                             fontWeight: 700,
-                            fontSize: { md: "48px", sm: "36px", xs: "32px" },
+                            fontSize: { xl: "48px", sm: "36px", xs: "32px" },
                             textWrap:"wrap",
                         }}>
                             {item.title}
@@ -68,7 +68,7 @@ function Ourprocessstep2() {
                             listStyleType: 'disc',
                             pl: 3,
                             fontWeight: 500,
-                            fontSize: { md: "24px", sm: "20px", xs: "16px" },
+                            fontSize: { xl: "24px", sm: "20px", xs: "16px" },
                         }}>
                             {item.points.map((point, pointIndex) => (
                                 <ListItem key={pointIndex} sx={{ display: 'list-item' }}>
@@ -76,7 +76,7 @@ function Ourprocessstep2() {
                                         primary={point}
                                         primaryTypographyProps={{
                                             sx: {
-                                                fontSize: { md: '24px', sm: '20px', xs: '16px' },
+                                                fontSize: { xl: '24px', sm: '20px', xs: '16px' },
                                                 fontWeight: 500,
                                             },
                                         }}
