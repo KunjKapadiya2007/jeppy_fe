@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     Box,
     Container,
@@ -6,11 +6,11 @@ import {
     Button,
     Collapse,
     List,
-    ListItem
+    ListItem, useTheme
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { Link } from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import Logo from '../../assets/images/global/logo.jpg';
 
 const navItems = [
@@ -21,13 +21,22 @@ const navItems = [
 ];
 
 function Navbar() {
+const [a,setA] = useState(null);
+    const location = useLocation();
+
+    useEffect(() => {
+        const b = location.pathname.split("/")[1] === "product";
+        setA(b);
+    }, [location]);
     const [menuOpen, setMenuOpen] = useState(false);
+  const theme = useTheme();
+        console.log("Is Product Route:", a);
 
     const toggleMenu = () => setMenuOpen((prev) => !prev);
 
     return (
         <Box sx={{
-            position:"absolute",
+            position: a ? "sticky" : "absolute",
             width:'100%',
             px: {xs:3 , md:5},
             zIndex: 999,
@@ -35,7 +44,7 @@ function Navbar() {
             <Container
                 maxWidth="xxl"
                 sx={{
-                    backgroundColor: '#fff',
+                    backgroundColor: a ? `${theme.palette.saffron}` : '#fff',
                     borderRadius: {md:'50px',xs:'50px'},
                     display: 'flex',
                     flexDirection: 'column',
@@ -65,14 +74,14 @@ function Navbar() {
                                 component={Link}
                                 to={path}
                                 sx={{
-                                    color: 'black',
+                                    color: a ? "#fff" :  "#000",
                                     p:0,
                                     fontWeight: 400,
                                     textTransform: 'none',
                                     fontSize: '20px',
                                     transition: '0.3s',
                                     textDecoration: 'none',
-                                    '&:hover': { color: '#f78c1f' },
+                                    '&:hover': { color: a ? "#000" : `${theme.palette.saffron}`,},
                                 }}
                             >
                                 {label}
@@ -109,7 +118,7 @@ function Navbar() {
                                         onClick={() => setMenuOpen(false)}
                                         sx={{
                                             justifyContent: 'flex-start',
-                                            color: 'black',
+                                            color: a ? "#fff" :  `${theme.palette.saffron}`,
                                             padding: '0px',
                                             fontWeight: 400,
                                             textDecoration: 'none',
