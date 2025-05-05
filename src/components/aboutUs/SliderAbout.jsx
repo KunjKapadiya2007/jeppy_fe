@@ -6,7 +6,7 @@ import {
     Card,
     CardContent,
     CardMedia,
-    IconButton
+    IconButton, useTheme
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -71,6 +71,8 @@ function SliderAbout() {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
 
+    const theme = useTheme();
+
     useEffect(() => {
         // Swiper will pick up refs after component mounts
     }, []);
@@ -104,21 +106,21 @@ function SliderAbout() {
                             zIndex: 10,
                             backgroundColor: '#fff',
                             boxShadow: 1,
-                            width: 30,
-                            height: 30,
+                            width: 45,
+                            height: 45,
                             border: '1px solid black',
                             '&:hover': {
                                 backgroundColor: 'black',
-                                color: 'white'
+                                color: `${theme.palette.saffron}`
                             },
                             '&:active': {
                                 backgroundColor: 'black',
-                                color: 'white'
+                                color: `${theme.palette.saffron}`
                             },
                         }}
 
                     >
-                        <ArrowBackIcon sx={{fontSize: 18}}/>
+                        <ArrowBackIcon sx={{fontSize: 22}}/>
                     </IconButton>
 
                     <IconButton
@@ -130,20 +132,20 @@ function SliderAbout() {
                             zIndex: 10,
                             backgroundColor: '#fff',
                             boxShadow: 1,
-                            width: 30,
-                            height: 30,
+                            width: 45,
+                            height: 45,
                             border: "1px solid black",
                             '&:hover': {
                                 backgroundColor: 'black',
-                                color: 'white'
+                                color: `${theme.palette.saffron}`
                             },
                             '&:active': {
                                 backgroundColor: 'black',
-                                color: 'white'
+                                color: `${theme.palette.saffron}`
                             },
                         }}
                     >
-                        <ArrowForwardIcon sx={{fontSize: 18}}/>
+                        <ArrowForwardIcon sx={{fontSize: 22}}/>
                     </IconButton>
 
                     <Swiper

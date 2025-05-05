@@ -17,7 +17,7 @@ function About() {
                     bgcolor={'rgba(254, 195, 85, 0.5)'}
             />
             <OurVision />
-            {/*<WhoWeAre />*/}
+            <WhoWeAre/>
             <GlobelAbout/>
             <SliderAbout/>
             <OurCertificates/>

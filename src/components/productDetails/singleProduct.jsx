@@ -27,7 +27,7 @@ const productData = [
 const MadStickSection = () => {
     return (
         <Container maxWidth={"xl"}>
-            <Box sx={{p: {xs: 0, sm: 4}, mx: 'auto', mt: 10}}>
+            <Box sx={{p: {xs: 0, sm: "4"}, mx: 'auto'}}>
                 <Grid container spacing={4} alignItems="center">
                     {/* Left: Images */}
                     <Grid item size={{xs: 12, md: 6}}>

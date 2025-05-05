@@ -206,7 +206,7 @@ const Products = () => {
                                             size="small"
                                             sx={{
                                                 color: '#1ea4ce',
-                                                borderTop: '2px solid red',
+                                                borderTop: '2px solid #F97316',
                                                 paddingBottom: 0,
                                                 textTransform: 'none',
                                                 borderRadius: 0
