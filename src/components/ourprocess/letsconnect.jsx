@@ -12,15 +12,51 @@ import {
     Container, useTheme, Stack, IconButton
 } from "@mui/material";
 import {useForm, Controller} from "react-hook-form";
+import * as yup from 'yup';
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from '@mui/icons-material/Telegram';
+import {yupResolver} from "@hookform/resolvers/yup/src/index.js";
+
 
 function LetsConnect() {
 
     const theme = useTheme();
 
-    const {control, handleSubmit} = useForm({
+    const schema = yup.object().shape({
+        firstName: yup
+            .string()
+            .required('First Name is required')
+            .matches(/^[A-Za-z\s]+$/, 'Invalid First Name'),
+
+        lastName: yup
+            .string()
+            .required('Last Name is required')
+            .matches(/^[A-Za-z\s]+$/, 'Invalid Last Name'),
+
+        email: yup
+            .string()
+            .required('Email is required')
+            .email('Invalid email address'),
+
+        phone: yup
+            .string()
+            .required('Phone Number is required')
+            .matches(/^[0-9]{10}$/, 'Phone number must be exactly 10 digits'),
+
+        subject: yup
+            .string()
+            .required('Please select a subject'),
+
+        message: yup
+            .string()
+            .required('Message is required'),
+    });
+    const {
+        control,
+        handleSubmit,
+        formState: {errors},
+    } = useForm({
         defaultValues: {
             firstName: '',
             lastName: '',
@@ -28,8 +64,10 @@ function LetsConnect() {
             phone: '',
             subject: '',
             message: ''
-        }
+        },
+        resolver: yupResolver(schema)
     });
+
 
     const onSubmit = (data) => {
         console.log(data);
@@ -158,6 +196,8 @@ function LetsConnect() {
                                             <TextField
                                                 {...field}
                                                 fullWidth
+                                                error={!!errors.firstName}
+                                                helperText={errors.firstName?.message}
                                                 variant="standard"
                                                 InputProps={{disableUnderline: false}}
                                                 sx={{
@@ -188,6 +228,8 @@ function LetsConnect() {
                                                 {...field}
                                                 fullWidth
                                                 variant="standard"
+                                                error={!!errors.lastName}
+                                                helperText={errors.lastName?.message}
                                                 InputProps={{disableUnderline: false}}
                                                 sx={{
                                                     mb: 3,
@@ -220,6 +262,8 @@ function LetsConnect() {
                                                 {...field}
                                                 fullWidth
                                                 variant="standard"
+                                                error={!!errors.email}
+                                                helperText={errors.email?.message}
                                                 InputProps={{disableUnderline: false}}
                                                 sx={{
                                                     mb: 3,
@@ -249,6 +293,8 @@ function LetsConnect() {
                                                 {...field}
                                                 fullWidth
                                                 variant="standard"
+                                                error={!!errors.phone}
+                                                helperText={errors.phone?.message}
                                                 InputProps={{disableUnderline: false}}
                                                 sx={{
                                                     mb: 3,
@@ -277,23 +323,8 @@ function LetsConnect() {
                                     name="subject"
                                     control={control}
                                     render={({field}) => (
-                                        <FormControl component="fieldset">
-                                            <RadioGroup
-                                                row
-                                                {...field}
-                                                sx={{
-                                                    mb: 3,
-                                                    '& .MuiRadio-root': {
-                                                        padding: '4px',
-                                                        '&.Mui-checked': {
-                                                            color: '#000000',
-                                                        },
-                                                    },
-                                                    '& .MuiFormControlLabel-label': {
-                                                        fontSize: '0.875rem',
-                                                    },
-                                                }}
-                                            >
+                                        <FormControl error={!!errors.subject}>
+                                            <RadioGroup row {...field}>
                                                 <FormControlLabel
                                                     value="General Inquiry 1"
                                                     control={<Radio size="small"/>}
@@ -315,6 +346,8 @@ function LetsConnect() {
                                                     label="General Inquiry"
                                                 />
                                             </RadioGroup>
+                                            <Typography variant="caption" color="error">{errors.subject?.message}</Typography>
+
                                         </FormControl>
                                     )}
                                 />
@@ -336,6 +369,8 @@ function LetsConnect() {
                                             placeholder="Write your message..."
                                             multiline
                                             minRows={1}
+                                            error={!!errors.message}
+                                            helperText={errors.message?.message}
                                             InputProps={{disableUnderline: false}}
                                             sx={{
                                                 mb: 1.5,

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {
     Box,
     Container,
@@ -148,6 +148,8 @@ const Footer = () => {
                                     {quickLink.map((text) => (
                                         <Box
                                             key={text}
+                                            component={Link}
+                                            to="/"
                                             sx={{
                                                 display: 'block',
                                                 color: 'white',

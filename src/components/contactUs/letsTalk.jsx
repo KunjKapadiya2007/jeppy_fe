@@ -11,11 +11,48 @@ import {
     FormControl,
     Container
 } from "@mui/material";
+import * as yup from 'yup';
 import {useForm, Controller} from "react-hook-form";
 import Img1 from '../../assets/images/contactUs/img1.png';
+import {yupResolver} from "@hookform/resolvers/yup/src/index.js";
 
 function LetsTalk() {
-    const {control, handleSubmit} = useForm({
+
+    const schema = yup.object().shape({
+        firstName: yup
+            .string()
+            .required('First Name is required')
+            .matches(/^[A-Za-z\s]+$/, 'Invalid First Name'),
+
+        lastName: yup
+            .string()
+            .required('Last Name is required')
+            .matches(/^[A-Za-z\s]+$/, 'Invalid Last Name'),
+
+        email: yup
+            .string()
+            .required('Email is required')
+            .email('Invalid email address'),
+
+        phone: yup
+            .string()
+            .required('Phone Number is required')
+            .matches(/^[0-9]{10}$/, 'Phone number must be exactly 10 digits'),
+
+        subject: yup
+            .string()
+            .required('Please select a subject'),
+
+        message: yup
+            .string()
+            .required('Message is required'),
+    });
+
+    const {
+        control,
+        handleSubmit,
+        formState: {errors},
+    } = useForm({
         defaultValues: {
             firstName: '',
             lastName: '',
@@ -23,7 +60,8 @@ function LetsTalk() {
             phone: '',
             subject: '',
             message: ''
-        }
+        },
+        resolver: yupResolver(schema)
     });
 
     const onSubmit = (data) => {
@@ -106,6 +144,8 @@ function LetsTalk() {
                                                 {...field}
                                                 fullWidth
                                                 variant="standard"
+                                                error={!!errors.firstName}
+                                                helperText={errors.firstName?.message}
                                                 InputProps={{disableUnderline: false}}
                                                 sx={{
                                                     mb: 3,
@@ -135,6 +175,8 @@ function LetsTalk() {
                                                 {...field}
                                                 fullWidth
                                                 variant="standard"
+                                                error={!!errors.lastName}
+                                                helperText={errors.lastName?.message}
                                                 InputProps={{disableUnderline: false}}
                                                 sx={{
                                                     mb: 3,
@@ -168,6 +210,8 @@ function LetsTalk() {
                                                 {...field}
                                                 fullWidth
                                                 variant="standard"
+                                                error={!!errors.email}
+                                                helperText={errors.email?.message}
                                                 InputProps={{disableUnderline: false}}
                                                 sx={{
                                                     mb: 3,
@@ -197,6 +241,8 @@ function LetsTalk() {
                                                 {...field}
                                                 fullWidth
                                                 variant="standard"
+                                                error={!!errors.phone}
+                                                helperText={errors.phone?.message}
                                                 InputProps={{disableUnderline: false}}
                                                 sx={{
                                                     mb: 3,
@@ -225,23 +271,8 @@ function LetsTalk() {
                                     name="subject"
                                     control={control}
                                     render={({field}) => (
-                                        <FormControl component="fieldset">
-                                            <RadioGroup
-                                                row
-                                                {...field}
-                                                sx={{
-                                                    mb: 3,
-                                                    '& .MuiRadio-root': {
-                                                        padding: '4px',
-                                                        '&.Mui-checked': {
-                                                            color: '#000000',
-                                                        },
-                                                    },
-                                                    '& .MuiFormControlLabel-label': {
-                                                        fontSize: '0.875rem',
-                                                    },
-                                                }}
-                                            >
+                                        <FormControl error={!!errors.subject}>
+                                            <RadioGroup row {...field}>
                                                 <FormControlLabel
                                                     value="General Inquiry 1"
                                                     control={<Radio size="small"/>}
@@ -263,6 +294,7 @@ function LetsTalk() {
                                                     label="General Inquiry"
                                                 />
                                             </RadioGroup>
+                                                <Typography variant="caption" color="error">{errors.subject?.message}</Typography>
                                         </FormControl>
                                     )}
                                 />
@@ -284,6 +316,8 @@ function LetsTalk() {
                                             placeholder="Write your message..."
                                             multiline
                                             minRows={1}
+                                            error={!!errors.message}
+                                            helperText={errors.message?.message}
                                             InputProps={{disableUnderline: false}}
                                             sx={{
                                                 mb: 1.5,
