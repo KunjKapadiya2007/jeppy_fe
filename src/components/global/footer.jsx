@@ -274,7 +274,7 @@ const Footer = () => {
                         BY{' '}
                         <span style={{marginRight: '4px'}}></span>
                         <MuiLink
-                            href="https://websmaniac.com"
+                            href="/"
                             target="_blank"
                             rel="noopener"
                             underline="hover"
