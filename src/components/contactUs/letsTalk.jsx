@@ -76,7 +76,7 @@ function LetsTalk() {
                 // maxWidth: '1200px',
                 // mx: 'auto',
                 bgcolor: '#FAFAFA',
-                borderRadius: 0,
+                borderRadius: 4,
                 overflow: 'hidden'
             }}>
                 <Typography
